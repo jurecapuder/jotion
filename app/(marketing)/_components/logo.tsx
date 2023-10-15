@@ -17,6 +17,10 @@ export const Logo = () => {
         width="40"
         alt="Logo"
       />
+
+      <p className={cn("font-semibold", font.className)}>
+        Jotion
+      </p>
     </div>
   )
 }
