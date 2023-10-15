@@ -12,6 +12,15 @@ export const Heroes = () => {
             alt="Documents"
           />
         </div>
+
+        <div className="relative h-[400px] w-[400px] hidden md:block">
+          <Image
+            src="/reading.png"
+            fill
+            className="object-contain"
+            alt="Reading"
+          />
+        </div>
       </div>
     </div>
   )
