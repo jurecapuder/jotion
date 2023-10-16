@@ -14,6 +14,10 @@ export const Navbar = () => {
       scrolled && "border-b shadow-sm"
     )}>
       <Logo />
+
+      <div className="md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2">
+        Login
+      </div>
     </div>
   )
 }
