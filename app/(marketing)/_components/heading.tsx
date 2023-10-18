@@ -21,7 +21,9 @@ export const Heading = () => {
       </h3>
 
       {isLoading && (
-        <Spinner size="lg" />
+        <div className="w-full flex items-center justify-center">
+          <Spinner size="lg" />
+        </div>
       )}
 
       {isAuthenticated && !isLoading && (
