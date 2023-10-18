@@ -4,6 +4,7 @@ import { useConvexAuth } from "convex/react";
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/spinner";
 
 export const Heading = () => {
   const { isAuthenticated, isLoading } =  useConvexAuth();
@@ -18,6 +19,10 @@ export const Heading = () => {
         Jotion is the connected workspace where <br />
         better, faster work happens.
       </h3>
+
+      {isLoading && (
+        <Spinner size="lg" />
+      )}
 
       {isAuthenticated && !isLoading && (
         <Button>
