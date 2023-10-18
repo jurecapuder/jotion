@@ -14,6 +14,11 @@ const spinnerVariants = cva(
         lg: "h-6 w-6",
         icon: "h-10 w-10"
       }
-    }
-  }
+    },
+    defaultVariants: {
+      size: "default"
+    },
+  },
 );
+
+interface SpinnerProps extends VariantProps<typeof spinnerVariants> {}
