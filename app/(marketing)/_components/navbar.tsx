@@ -53,7 +53,9 @@ export const Navbar = () => {
               </Link>
             </Button>
 
-            <UserButton />
+            <UserButton
+              afterSignOutUrl="/"
+            />
           </>
         )}
 
