@@ -1,12 +1,18 @@
 "use client";
 
+import { useConvexAuth } from "convex/react";
+import { SignInButton } from "@clerk/clerk-react";
+
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { ModeToggle } from "@/components/mode-toggle"; 
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 import { Logo } from "./logo";
 
 export const Navbar = () => {
+  const { isAuthenticated, isLoading } = useConvexAuth();
+
   const scrolled = useScrollTop();
 
   return (
@@ -17,6 +23,20 @@ export const Navbar = () => {
       <Logo />
 
       <div className="md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2">
+        {isLoading && (
+          <p>Loading...</p>
+        )}
+
+        {!isAuthenticated && !isLoading && (
+          <>
+            <SignInButton mode="modal">
+              <Button variant="ghost" size="sm">
+                Login
+              </Button>
+            </SignInButton>
+          </>
+        )}
+
         <ModeToggle />
       </div>
     </div>
