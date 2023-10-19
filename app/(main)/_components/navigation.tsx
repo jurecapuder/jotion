@@ -2,8 +2,11 @@
 
 import { ChevronsLeftIcon } from "lucide-react";
 import { ElementRef, useRef, useState } from "react";
+import { useMediaQuery } from "usehooks-ts";
 
 export const Navigation = () => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   const isResizingRef = useRef(false);
   const sidebarRef = useRef<ElementRef<"aside">>(null);
   const navbarRef = useRef<ElementRef<"div">>(null);
