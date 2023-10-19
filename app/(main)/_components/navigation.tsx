@@ -2,8 +2,10 @@
 
 export const Navigation = () => {
   return (
-    <div>
-      Navigation
-    </div>
+    <>
+      <aside>
+        Navigation
+      </aside>
+    </>
   )
 }
