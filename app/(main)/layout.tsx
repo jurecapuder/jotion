@@ -2,6 +2,7 @@
 
 import { Spinner } from "@/components/spinner";
 import { useConvexAuth } from "convex/react";
+import { redirect } from "next/navigation";
 
 const MainLayout = ({
   children
@@ -16,6 +17,10 @@ const MainLayout = ({
         <Spinner size="lg" />
       </div>
     )
+  }
+
+  if (!isAuthenticated) {
+    return redirect("/");
   }
 
   return (
