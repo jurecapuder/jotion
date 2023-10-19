@@ -1,8 +1,15 @@
 "use client";
 
 import { ChevronsLeftIcon } from "lucide-react";
+import { ElementRef, useRef, useState } from "react";
 
 export const Navigation = () => {
+  const isResizingRef = useRef(false);
+  const sidebarRef = useRef<ElementRef<"aside">>(null);
+  const navbarRef = useRef<ElementRef<"div">>(null);
+  const [isResetting, setIsResetting] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false)
+
   return (
     <>
       <aside
