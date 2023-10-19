@@ -1,10 +1,12 @@
 "use client";
 
 import { ChevronsLeftIcon } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { ElementRef, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
 export const Navigation = () => {
+  const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const isResizingRef = useRef(false);
