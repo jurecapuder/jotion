@@ -29,7 +29,10 @@ export const Navigation = () => {
       >
         <div
           role="button"
-          className="h-6 w-6 text-muted-foreground rounded-sm hover:bg-neutral-300 dark:bg-neutral-600 absolute top-3 right-2 opacity-0 group-hover/sidebar:opacity-100 transition"
+          className={cn(
+            "h-6 w-6 text-muted-foreground rounded-sm hover:bg-neutral-300 dark:bg-neutral-600 absolute top-3 right-2 opacity-0 group-hover/sidebar:opacity-100 transition",
+            isMobile && "opacity-100"
+          )}
         >
           <ChevronsLeftIcon className="h-6 w-6" />
         </div>
