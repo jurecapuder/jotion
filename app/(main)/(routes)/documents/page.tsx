@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import { useUser } from "@clerk/clerk-react";
+import { PlusCircle } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 
 const DocumentsPage = () => {
   const { user } = useUser();
@@ -27,6 +30,10 @@ const DocumentsPage = () => {
       <h2 className="text-lg font-medium">
         Welcome to {user?.firstName}&apos;s Jotion
       </h2>
+
+      <Button>
+        <PlusCircle />
+      </Button>
     </div>
   )
 }
