@@ -24,7 +24,7 @@ const DocumentsPage = () => {
         className="dark:block hidden"
       />
 
-      <h2>
+      <h2 className="text-lg font-medium">
         Welcome to {user?.firstName}&apos;s Jotion
       </h2>
     </div>
