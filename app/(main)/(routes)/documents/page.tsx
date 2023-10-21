@@ -32,7 +32,7 @@ const DocumentsPage = () => {
       </h2>
 
       <Button>
-        <PlusCircle />
+        <PlusCircle className="h-4 w-4 mr-2" />
       </Button>
     </div>
   )
