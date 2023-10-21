@@ -23,6 +23,10 @@ const DocumentsPage = () => {
         alt="Empty"
         className="dark:block hidden"
       />
+
+      <h2>
+        Welcome to {user?.firstName}&apos;s Jotion
+      </h2>
     </div>
   )
 }
