@@ -12,6 +12,14 @@ const DocumentsPage = () => {
         alt="Empty"
         className="dark:hidden"
       />
+
+      <Image
+        src="/empty-dark.png"
+        height="300"
+        width="300"
+        alt="Empty"
+        className="dark:block hidden"
+      />
     </div>
   )
 }
