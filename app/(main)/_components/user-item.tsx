@@ -37,6 +37,15 @@ export const UserItem = () => {
           <ChevronsLeftRight className="rotate-90 ml-2 text-muted-foreground" />
         </div>
       </DropdownMenuTrigger>
+
+      <DropdownMenuContent
+        className="w-80"
+        align="start"
+        alignOffset={11}
+        forceMount
+      >
+
+      </DropdownMenuContent>
     </DropdownMenu>
   )
 }
