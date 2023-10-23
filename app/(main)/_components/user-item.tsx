@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronsLeftRight } from "lucide-react";
-import { useUser } from "@clerk/clerk-react";
+import { SignOutButton, useUser } from "@clerk/clerk-react";
 
 import {
   Avatar,
@@ -63,6 +63,14 @@ export const UserItem = () => {
             </div>
           </div>
         </div>
+
+        <DropdownMenuSeparator />
+
+        <DropdownMenuItem asChild className="w-full cursor-pointer text-muted-foreground">
+          <SignOutButton>
+            Log out
+          </SignOutButton>
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )
