@@ -44,7 +44,11 @@ export const UserItem = () => {
         alignOffset={11}
         forceMount
       >
-
+        <div className="flex flex-col space-y-4 p-2 ">
+          <p className="text-xs font-medium leading-none text-muted-foreground">
+            {user?.emailAddresses[0].emailAddress}
+          </p>
+        </div>
       </DropdownMenuContent>
     </DropdownMenu>
   )
