@@ -28,6 +28,10 @@ export const UserItem = () => {
             <Avatar className="h-5 w-5">
               <AvatarImage src={user?.imageUrl} />
             </Avatar>
+
+            <span>
+              {user?.fullName}&apos;s Jotion
+            </span>
           </div>
         </div>
       </DropdownMenuTrigger>
