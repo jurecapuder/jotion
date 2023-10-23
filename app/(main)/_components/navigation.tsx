@@ -6,6 +6,7 @@ import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
 import { cn } from "@/lib/utils";
+
 import { UserItem } from "./user-item";
 
 export const Navigation = () => {
