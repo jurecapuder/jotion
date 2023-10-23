@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronsLeftRight } from "lucide-react";
+import { useUser } from "@clerk/clerk-react";
 
 import {
   Avatar,
@@ -17,6 +18,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export const UserItem = () => {
+  const { user } = useUser();
+
   return (
     <div>
       User item
