@@ -33,6 +33,8 @@ export const UserItem = () => {
               {user?.fullName}&apos;s Jotion
             </span>
           </div>
+
+          <ChevronsLeftRight className="rotate-90 ml-2 text-muted-foreground" />
         </div>
       </DropdownMenuTrigger>
     </DropdownMenu>
