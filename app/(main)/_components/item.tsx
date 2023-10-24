@@ -14,7 +14,12 @@ export const Item = ({
   icon,
 }: ItemProps) => {
   return (
-    <div>
+    <div
+      onClick={onClick}
+      role="button"
+      style={{ paddingLeft: "12px" }}
+      className="group min-h-[27px] text-sm py-1 pr-3 w-full hover:bg-primary/5 flex items-center text-muted-foreground font-medium"
+    >
       {label}
     </div>
   )
