@@ -3,11 +3,15 @@
 import Image from "next/image";
 import { useUser } from "@clerk/clerk-react";
 import { PlusCircle } from "lucide-react";
+import { useMutation } from "convex/react";
 
+import { api } from "@/convex/_generated/api";
 import { Button } from "@/components/ui/button";
 
 const DocumentsPage = () => {
   const { user } = useUser();
+
+  const create = useMutation(api.documents.create);
 
   return (
     <div className="h-full flex flex-col items-center justify-center space-y-4">
