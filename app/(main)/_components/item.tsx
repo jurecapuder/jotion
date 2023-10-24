@@ -22,7 +22,9 @@ export const Item = ({
     >
       <Icon className="shrink-0 h-[18px] mr-2 text-muted-foreground" />
 
-      {label}
+      <span className="truncate">
+        {label}
+      </span>
     </div>
   )
 }
