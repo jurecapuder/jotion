@@ -1,6 +1,10 @@
 "use client";
 
-import { LucideIcon } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronRight,
+  LucideIcon
+} from "lucide-react";
 
 import { Id } from "@/convex/_generated/dataModel";
 
@@ -29,6 +33,8 @@ export const Item = ({
   onExpand,
   expanded,
 }: ItemProps) => {
+  const ChevronIcon = expanded ? ChevronDown : ChevronRight;
+
   return (
     <div
       onClick={onClick}
