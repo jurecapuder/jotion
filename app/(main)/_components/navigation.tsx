@@ -4,7 +4,7 @@ import { ChevronsLeftIcon, MenuIcon, PlusCircle } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
-import { useQuery } from "convex/react";
+import { useQuery, useMutation } from "convex/react";
 
 import { cn } from "@/lib/utils";
 import { api } from "@/convex/_generated/api";
@@ -16,6 +16,7 @@ export const Navigation = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const documents = useQuery(api.documents.get);
+  const create = useMutation(api.documents.create);
 
   const isResizingRef = useRef(false);
   const sidebarRef = useRef<ElementRef<"aside">>(null);
