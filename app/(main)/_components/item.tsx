@@ -18,9 +18,16 @@ interface ItemProps {
 }
 
 export const Item = ({
+  id,
   label,
   onClick,
   icon: Icon,
+  active,
+  documentIcon,
+  isSearch,
+  level = 0,
+  onExpand,
+  expanded,
 }: ItemProps) => {
   return (
     <div
