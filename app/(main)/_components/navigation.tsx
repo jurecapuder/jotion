@@ -135,7 +135,7 @@ export const Navigation = () => {
           <UserItem />
 
           <Item
-            onClick={() => {}}
+            onClick={handleCreate}
             label="New page"
             icon={PlusCircle}
           />
