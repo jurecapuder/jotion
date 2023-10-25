@@ -2,8 +2,10 @@
 
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
+import { useQuery } from "convex/react";
 
 import { Doc, Id } from "@/convex/_generated/dataModel";
+import { api } from "@/convex/_generated/api";
 
 interface DocumentListProps {
   parentDocumentId?: Id<"documents">;
@@ -24,7 +26,15 @@ export const DocumentList = ({
       ...prevExpanded,
       [documentId]: !prevExpanded[documentId]
     }));
-  }
+  };
+
+  const documents = useQuery(api.documents.getSidebar, {
+    parentDocument: parentDocumentId
+  });
+
+  const onRedirect = (documentId: string) => {
+    router.push(`/documents/${documentId}`);
+  };
 
   return (
     <div>
