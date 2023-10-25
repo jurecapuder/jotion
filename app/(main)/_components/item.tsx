@@ -61,7 +61,7 @@ export const Item = ({
       )}
 
       {documentIcon ? (
-        <div>
+        <div className="shrink-0 mr-2 text-[18px]">
           {documentIcon}
         </div>
       ) : (
