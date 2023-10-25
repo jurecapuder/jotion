@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 
 import { Id } from "@/convex/_generated/dataModel";
+import { cn } from "@/lib/utils";
 
 interface ItemProps {
   id?: Id<"documents">;
@@ -42,7 +43,10 @@ export const Item = ({
       style={{
         paddingLeft: level ? `${(level * 12) + 12}px` : "12px"
       }}
-      className="group min-h-[27px] text-sm py-1 pr-3 w-full hover:bg-primary/5 flex items-center text-muted-foreground font-medium"
+      className={cn(
+        "group min-h-[27px] text-sm py-1 pr-3 w-full hover:bg-primary/5 flex items-center text-muted-foreground font-medium",
+        active && "bg-primary/5 text-primary",
+      )}
     >
       <Icon className="shrink-0 h-[18px] mr-2 text-muted-foreground" />
 
