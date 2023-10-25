@@ -48,6 +48,16 @@ export const Item = ({
         active && "bg-primary/5 text-primary",
       )}
     >
+      {!!id && (
+        <div
+          role="button"
+          className="h-full rounded-sm hover:bg-neutral-300 dark:bg-neutral-600 mr-1"
+          onClick={() => {}}
+        >
+          <ChevronIcon />
+        </div>
+      )}
+
       <Icon className="shrink-0 h-[18px] mr-2 text-muted-foreground" />
 
       <span className="truncate">
