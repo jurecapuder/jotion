@@ -7,6 +7,8 @@ import { useQuery } from "convex/react";
 import { Doc, Id } from "@/convex/_generated/dataModel";
 import { api } from "@/convex/_generated/api";
 
+import { Item } from "./item";
+
 interface DocumentListProps {
   parentDocumentId?: Id<"documents">;
   level?: number;
@@ -34,6 +36,22 @@ export const DocumentList = ({
 
   const onRedirect = (documentId: string) => {
     router.push(`/documents/${documentId}`);
+  };
+
+  if (documents === undefined) {
+    return (
+      <>
+        <Item.Skeleton level={level} />
+
+        {level === 0 && (
+          <>
+            <Item.Skeleton level={level} />
+
+            <Item.Skeleton level={level} />
+          </>
+        )}
+      </>
+    );
   };
 
   return (
