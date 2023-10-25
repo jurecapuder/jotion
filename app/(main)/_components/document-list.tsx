@@ -3,6 +3,7 @@
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { useQuery } from "convex/react";
+import { FileIcon } from "lucide-react";
 
 import { Doc, Id } from "@/convex/_generated/dataModel";
 import { api } from "@/convex/_generated/api";
@@ -69,6 +70,22 @@ export const DocumentList = ({
       >
         No pages inside
       </p>
+
+      {documents.map((document) => (
+        <div key={document._id}>
+          <Item
+            id={document._id}
+            onClick={() => onRedirect(document._id)}
+            label={document.title}
+            icon={FileIcon}
+            documentIcon={document.icon}
+            active={params.documentId === document._id}
+            level={level}
+            onExpand={() => onExpand(document._id)}
+            expanded={expanded[document._id]}
+          />
+        </div>
+      ))}
     </>
   )
 }
