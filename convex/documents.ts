@@ -24,9 +24,30 @@ export const archive = mutation({
       throw new Error("Unauthorized");
     }
 
+    const recursiveArchive = async (documentId: Id<"documents">) => {
+      const children = await ctx.db
+        .query("documents")
+        .withIndex("by_user_parent", (q) => (
+          q
+            .eq("userId", userId)
+            .eq("parentDocument", documentId)
+        ))
+        .collect();
+
+      for (const child of children) {
+        await ctx.db.patch(child._id, {
+          isArchived: true,
+        });
+
+      await recursiveArchive(child._id);
+      }
+    }
+
     const document = await ctx.db.patch(args.id, {
       isArchived: true,
     });
+
+    recursiveArchive(args.id);
     
     return document;
   }
