@@ -6,10 +6,14 @@ import {
   LucideIcon,
   Plus
 } from "lucide-react";
+import { useMutation } from "convex/react";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 import { Id } from "@/convex/_generated/dataModel";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
+import { api } from "@/convex/_generated/api";
 
 interface ItemProps {
   id?: Id<"documents">;
@@ -36,12 +40,35 @@ export const Item = ({
   onExpand,
   expanded,
 }: ItemProps) => {
+  const router = useRouter();
+
+  const create = useMutation(api.documents.create);
+
   const handleExpand = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
     event?.stopPropagation();
     onExpand?.();
-  }
+  };
+
+  const onCreate = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    if (!id) return;
+    const promise = create({ title: "Untitled", parentDocument: id })
+      .then((documentId) => {
+        if (!expanded) {
+          onExpand?.();
+        }
+        router.push(`/documents/${documentId}`);
+      });
+
+    toast.promise(promise, {
+      loading: "Creating a new note...",
+      success: "New note created!",
+      error: "Failed to create a new note.",
+    })
+  };
 
   const ChevronIcon = expanded ? ChevronDown : ChevronRight;
 
