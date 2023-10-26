@@ -79,7 +79,7 @@ export const getSidebar = query({
       .order("desc")
       .collect();
 
-      return documents;
+    return documents;
   },
 })
 
