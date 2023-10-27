@@ -5,7 +5,8 @@ import {
   ChevronRight,
   LucideIcon,
   MoreHorizontal,
-  Plus
+  Plus,
+  Trash
 } from "lucide-react";
 import { useMutation } from "convex/react";
 import { useRouter } from "next/navigation";
@@ -144,7 +145,11 @@ export const Item = ({
               side="right"
               forceMount
             >
+              <DropdownMenuItem onClick={() => {}}>
+                <Trash className="h-4 w-4 mr-2" />
 
+                Delete
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
