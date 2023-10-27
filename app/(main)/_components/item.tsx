@@ -134,7 +134,7 @@ export const Item = ({
                 role="button"
                 className="opacity-0 group-hover:opacity-100 h-full ml-auto rounded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600"
               >
-                <MoreHorizontal />
+                <MoreHorizontal className="h-4 w-4 text-muted-foreground" />
               </div>
             </DropdownMenuTrigger>
           </DropdownMenu>
