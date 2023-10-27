@@ -137,6 +137,15 @@ export const Item = ({
                 <MoreHorizontal className="h-4 w-4 text-muted-foreground" />
               </div>
             </DropdownMenuTrigger>
+
+            <DropdownMenuContent
+              className="w-60"
+              align="start"
+              side="right"
+              forceMount
+            >
+
+            </DropdownMenuContent>
           </DropdownMenu>
 
           <div
