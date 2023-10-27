@@ -4,6 +4,7 @@ import {
   ChevronDown,
   ChevronRight,
   LucideIcon,
+  MoreHorizontal,
   Plus
 } from "lucide-react";
 import { useMutation } from "convex/react";
@@ -14,6 +15,13 @@ import { Id } from "@/convex/_generated/dataModel";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
 import { api } from "@/convex/_generated/api";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator
+} from "@/components/ui/dropdown-menu";
 
 interface ItemProps {
   id?: Id<"documents">;
