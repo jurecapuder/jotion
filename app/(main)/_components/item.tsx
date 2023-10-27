@@ -125,6 +125,19 @@ export const Item = ({
 
       {!!id && (
         <div className="ml-auto flex items-center gap-x-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              onClick={(e) => e.stopPropagation()}
+              asChild
+            >
+              <div
+                role="button"
+              >
+                <MoreHorizontal />
+              </div>
+            </DropdownMenuTrigger>
+          </DropdownMenu>
+
           <div
             role="button"
             onClick={onCreate}
