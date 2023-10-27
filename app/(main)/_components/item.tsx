@@ -11,6 +11,7 @@ import {
 import { useMutation } from "convex/react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { useUser } from "@clerk/clerk-react";
 
 import { Id } from "@/convex/_generated/dataModel";
 import { cn } from "@/lib/utils";
@@ -49,6 +50,8 @@ export const Item = ({
   onExpand,
   expanded,
 }: ItemProps) => {
+  const { user } = useUser();
+
   const router = useRouter();
 
   const create = useMutation(api.documents.create);
@@ -150,6 +153,12 @@ export const Item = ({
 
                 Delete
               </DropdownMenuItem>
+
+              <DropdownMenuSeparator />
+
+              <div>
+                Last edited by: {user?.fullName}
+              </div>
             </DropdownMenuContent>
           </DropdownMenu>
 
