@@ -156,7 +156,7 @@ export const Item = ({
 
               <DropdownMenuSeparator />
 
-              <div>
+              <div className="text-xs text-muted-foreground p-2">
                 Last edited by: {user?.fullName}
               </div>
             </DropdownMenuContent>
