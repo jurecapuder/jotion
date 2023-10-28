@@ -6,7 +6,8 @@ import {
   Plus,
   PlusCircle,
   Search,
-  Settings
+  Settings,
+  Trash
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState } from "react";
@@ -174,6 +175,15 @@ export const Navigation = () => {
             icon={Plus}
             label="Add a page"
           />
+
+          <Popover>
+            <PopoverTrigger className="w-full mt-4">
+              <Item
+                label="Trash"
+                icon={Trash}
+              />
+            </PopoverTrigger>
+          </Popover>
         </div>
 
         <div
