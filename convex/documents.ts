@@ -142,5 +142,11 @@ export const restore = mutation({
     }
 
     const userId = identity.subject;
+
+    const existingDocument = await ctx.db.get(args.id);
+
+    if (!existingDocument) {
+      throw new Error("Not found");
+    }
   }
 });
