@@ -152,5 +152,9 @@ export const restore = mutation({
     if (existingDocument.userId !== userId) {
       throw new Error("Unauthorized");
     }
+
+    if (existingDocument.parentDocument) {
+      const parent = await ctx.db.get(existingDocument.parentDocument);
+    }
   }
 });
