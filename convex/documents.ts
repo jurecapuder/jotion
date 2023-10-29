@@ -131,3 +131,16 @@ export const getTrash = query({
     return documents;
   }
 });
+
+export const restore = mutation({
+  args: { id: v.id("documents") },
+  handler: async (ctx, args) => {
+    const identity = await ctx.auth.getUserIdentity();
+
+    if (!identity) {
+      throw new Error("Not authenticated");
+    }
+
+    const userId = identity.subject;
+  }
+});
