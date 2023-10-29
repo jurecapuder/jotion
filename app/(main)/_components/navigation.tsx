@@ -183,6 +183,13 @@ export const Navigation = () => {
                 icon={Trash}
               />
             </PopoverTrigger>
+
+            <PopoverContent
+              className="p-0 w-72"
+              side={isMobile ? "bottom" : "right"}
+            >
+              <p>Trash box</p>
+            </PopoverContent>
           </Popover>
         </div>
 
