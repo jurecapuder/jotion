@@ -153,8 +153,15 @@ export const restore = mutation({
       throw new Error("Unauthorized");
     }
 
+    const options: Partial<Doc<"documents">> = {
+      isArchived: false,
+    };
+
     if (existingDocument.parentDocument) {
       const parent = await ctx.db.get(existingDocument.parentDocument);
+      if (parent?.isArchived) {
+
+      }
     }
   }
 });
