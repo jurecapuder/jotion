@@ -160,8 +160,12 @@ export const restore = mutation({
     if (existingDocument.parentDocument) {
       const parent = await ctx.db.get(existingDocument.parentDocument);
       if (parent?.isArchived) {
-
+        options.parentDocument = undefined;
       }
     }
+
+    await ctx.db.patch(args.id, options);
+
+    return existingDocument;
   }
 });
