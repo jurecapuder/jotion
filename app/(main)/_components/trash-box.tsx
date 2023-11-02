@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useQuery, useMutation } from "convex/react";
+import { toast } from "sonner";
 
 import { api } from "@/convex/_generated/api";
+import { Id } from "@/convex/_generated/dataModel";
 
 export const TrashBox = () => {
   const router = useRouter();
@@ -22,6 +24,20 @@ export const TrashBox = () => {
   const onClick = (documentId: string) => {
     router.push(`/documents/${documentId}`);
   };
+
+  const onRestore = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    documentId: Id<"documents">
+  ) => {
+    event.stopPropagation();
+    const promise = restore({ id: documentId });
+
+    toast.promise(promise, {
+      loading: "Restoring note...",
+      success: "Note restored",
+      error: "Failed to restore note.",
+    });
+  }
 
   return (
     <div>
