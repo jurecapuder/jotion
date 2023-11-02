@@ -34,10 +34,22 @@ export const TrashBox = () => {
 
     toast.promise(promise, {
       loading: "Restoring note...",
-      success: "Note restored",
+      success: "Note restored!",
       error: "Failed to restore note.",
     });
-  }
+  };
+
+  const onRemove = (
+    documentId: Id<"documents">
+  ) => {
+    const promise = remove({ id: documentId });
+
+    toast.promise(promise, {
+      loading: "Deleting note...",
+      success: "Note deleted!",
+      error: "Failed to delete note.",
+    });
+  };
 
   return (
     <div>
