@@ -184,6 +184,8 @@ export const restore = mutation({
     }
 
     await ctx.db.patch(args.id, options);
+    
+    recursiveRestore(args.id);
 
     return existingDocument;
   }
