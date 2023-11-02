@@ -19,6 +19,10 @@ export const TrashBox = () => {
     return document.title.toLowerCase().includes(search.toLowerCase());
   });
 
+  const onClick = (documentId: string) => {
+    router.push(`/documents/${documentId}`);
+  };
+
   return (
     <div>
       Trash box
