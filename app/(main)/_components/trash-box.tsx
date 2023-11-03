@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useQuery, useMutation } from "convex/react";
+import { SearchIcon } from "lucide-react";
 import { toast } from "sonner";
 
 import { api } from "@/convex/_generated/api";
@@ -65,8 +66,10 @@ export const TrashBox = () => {
   }
 
   return (
-    <div>
-      Trash box
+    <div className="text-sm">
+      <div className="flex items-center gap-x-1 p-2">
+        <SearchIcon />
+      </div>
     </div>
-  )
+  );
 };
