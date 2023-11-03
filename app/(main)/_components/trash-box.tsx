@@ -7,6 +7,7 @@ import { toast } from "sonner";
 
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
+import { Spinner } from "@/components/spinner";
 
 export const TrashBox = () => {
   const router = useRouter();
@@ -54,6 +55,14 @@ export const TrashBox = () => {
       router.push("/documents");
     };
   };
+
+  if (documents === undefined) {
+    return (
+      <div className="h-full flex items-center justity-center p-4">
+        <Spinner size="lg" />
+      </div>
+    );
+  }
 
   return (
     <div>
