@@ -12,7 +12,7 @@ import {
   AlertDialogTrigger
 } from "@/components/ui/alert-dialog";
 
-interface ConfirmmModalProps {
+interface ConfirmModalProps {
   children: React.ReactNode;
   onConfirm: () => void;
 };
