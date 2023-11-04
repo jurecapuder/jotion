@@ -16,3 +16,14 @@ interface ConfirmModalProps {
   children: React.ReactNode;
   onConfirm: () => void;
 };
+
+export const ConfirmModal = ({
+  children,
+  onConfirm
+}: ConfirmModalProps) => {
+  return (
+    <AlertDialog>
+      
+    </AlertDialog>
+  )
+}
