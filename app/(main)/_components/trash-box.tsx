@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useQuery, useMutation } from "convex/react";
-import { SearchIcon, Undo } from "lucide-react";
+import { SearchIcon, Trash, Undo } from "lucide-react";
 import { toast } from "sonner";
 
 import { api } from "@/convex/_generated/api";
@@ -102,6 +102,13 @@ export const TrashBox = () => {
                 className="rounded-sm p-2 hover:bg-neutral-200"
               >
                 <Undo className="h-4 w-4 text-muted-foreground" />
+              </div>
+
+              <div
+                role="button"
+                className="rounded-sm p-2 hover:bg-neutral-200"
+              >
+                <Trash className="h-4 w-4 text-muted-foreground" />
               </div>
             </div>
           </div>
