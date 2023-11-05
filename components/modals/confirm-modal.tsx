@@ -38,6 +38,12 @@ export const ConfirmModal = ({
               This action cannot be undone.
             </AlertDialogDescription>
           </AlertDialogHeader>
+
+          <AlertDialogFooter>
+            <AlertDialogCancel onClick={e => e.stopPropagation()}>
+              Cancel
+            </AlertDialogCancel>
+          </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialogContent>
     </AlertDialog>
