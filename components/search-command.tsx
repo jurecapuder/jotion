@@ -31,9 +31,14 @@ export const SearchCommand = () => {
     setIsMounted(true);
   }, []);
 
+  const onSelect = (id: string) => {
+    router.push(`/documents/${id}`);
+    onClose();
+  };
+
   if (!isMounted) {
     return null;
-  }
+  };
 
   return (
     <CommandDialog open={isOpen} onOpenChange={onClose}>
@@ -61,6 +66,10 @@ export const SearchCommand = () => {
               ): (
                 <File className="mr-2 h-4 w-4" />
               )}
+
+              <span>
+                {document.title}
+              </span>
             </CommandItem>
           ))}
         </CommandGroup>
