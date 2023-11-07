@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { File } from "lucide-react";
+import { Command, File } from "lucide-react";
 import { useQuery } from "convex/react";
 import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/clerk-react";
@@ -30,4 +30,16 @@ export const SearchCommand = () => {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
+  return (
+    <CommandDialog open={isOpen} onOpenChange={onClose}>
+      <CommandInput
+        placeholder={`Search ${user?.fullName}'s Jotion...`}
+      />
+    </CommandDialog>
+  )
 }
