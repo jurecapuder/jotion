@@ -40,6 +40,31 @@ export const SearchCommand = () => {
       <CommandInput
         placeholder={`Search ${user?.fullName}'s Jotion...`}
       />
+
+      <CommandList>
+        <CommandEmpty>
+          No results found.
+        </CommandEmpty>
+
+        <CommandGroup heading="Documents">
+          {documents?.map((document) => (
+            <CommandItem
+              key={document._id}
+              value={`${document._id}-${document.title}`}
+              title={document.title}
+              onSelect={() => {}}
+            >
+              {document.icon ? (
+                <p className="mr-2 text-[18px]">
+                  {document.icon}
+                </p>
+              ): (
+                <File className="mr-2 h-4 w-4" />
+              )}
+            </CommandItem>
+          ))}
+        </CommandGroup>
+      </CommandList>
     </CommandDialog>
   )
 }
