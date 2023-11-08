@@ -11,6 +11,10 @@ export const ModalProvider = () => {
     setIsMounted(true);
   }, []);
 
+  if (!isMounted) {
+    return null;
+  };
+
   return (
     <>
       <SettingsModal />
