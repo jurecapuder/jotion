@@ -259,5 +259,11 @@ export const getById = query({
     if (!identity) {
       throw new Error("Not authenticated");
     }
+
+    const userId = identity.subject;
+
+    if (document.userId !== userId) {
+      throw new Error("Unauthorized");
+    }
   }
 });
