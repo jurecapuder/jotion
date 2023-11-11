@@ -265,5 +265,7 @@ export const getById = query({
     if (document.userId !== userId) {
       throw new Error("Unauthorized");
     }
+
+    return document;
   }
 });
