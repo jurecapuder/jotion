@@ -240,3 +240,10 @@ export const getSearch = query({
     return documents;
   }
 });
+
+export const getById = query({
+  args: { documentId: v.id("documents") },
+  handler: async (ctx, args) => {
+    const identity = await ctx.auth.getUserIdentity();
+  }
+});
