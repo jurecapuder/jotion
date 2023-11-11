@@ -2,6 +2,7 @@
 
 import { useQuery } from "convex/react";
 import { useParams } from "next/navigation";
+import { MenuIcon } from "lucide-react";
 
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
@@ -21,9 +22,21 @@ export const Navbar = ({
     documentId: params.documentId as Id<"documents">,
   });
 
+  if (document === undefined) {
+    return <p>Loading...</p>
+  }
+
+  if (document === null) {
+    return null;
+  }
+
   return (
-    <div>
-      Navbar
-    </div>
+    <>
+      <nav className="bg-background dark:bg-[#1F1F1F] px-3 py-2 w-full flex items-center gap-x-4">
+        {isCollapsed && (
+          <MenuIcon />
+        )}
+      </nav>
+    </>
   );
 };
