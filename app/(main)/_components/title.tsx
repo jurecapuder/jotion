@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useMutation } from "convex/react";
 
 import { Doc } from "@/convex/_generated/dataModel";
@@ -15,9 +15,20 @@ interface TitleProps {
 export const Title = ({
   initialData
 }: TitleProps) => {
+  const inputRef = useRef<HTMLInputElement>(null);
   const update = useMutation(api.documents.update);
 
+  const [title, setTitle] = useState(initialData.title || "Untitled");
   const [isEditing, setIsEditing] = useState(false);
+
+  const enableInput = () => {
+    setTitle(initialData.title);
+    setIsEditing(true);
+    setTimeout(() => {
+      inputRef.current?.focus();
+      inputRef.current?.setSelectionRange(0, inputRef.current.value.length);
+    }, 0);
+  }
 
   return (
     <div className="flex items-center gap-x-1">
