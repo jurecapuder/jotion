@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useMutation } from "convex/react";
+import { toast } from "sonner";
 
 import { Id } from "@/convex/_generated/dataModel";
 import { api } from "@/convex/_generated/api";
@@ -17,7 +18,17 @@ export const Banner = ({
 
   const remove = useMutation(api.documents.remove);
   const restore = useMutation(api.documents.restore);
-  
+
+  const onRemove = () => {
+    const promise = remove({ id: documentId });
+
+    toast.promise(promise, {
+      loading: "Deleting note...",
+      success: "Note deleted!",
+      error: "Failed to delete note."
+    });
+  };
+
   return (
     <div>
       Banner
