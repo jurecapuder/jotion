@@ -29,6 +29,16 @@ export const Banner = ({
     });
   };
 
+  const onRestore = () => {
+    const promise = restore({ id: documentId });
+
+    toast.promise(promise, {
+      loading: "Restoring note...",
+      success: "Note restored!",
+      error: "Failed to restore note."
+    });
+  };
+
   return (
     <div>
       Banner
