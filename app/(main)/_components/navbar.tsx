@@ -40,6 +40,10 @@ export const Navbar = ({
             className="h-6 w-6 text-muted-foreground"
           />
         )}
+
+        <div className="flex items-center justify-between w-full">
+          Navbar
+        </div>
       </nav>
     </>
   );
