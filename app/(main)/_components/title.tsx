@@ -44,12 +44,26 @@ export const Title = ({
     });
   };
 
+  const onKeyDown = (
+    event: React.KeyboardEvent<HTMLInputElement>
+  ) => {
+    if (event.key === "Enter") {
+      disableInput();
+    }
+  };
+
   return (
     <div className="flex items-center gap-x-1">
       {!!initialData.icon && <p>{initialData.icon}</p>}
 
       {isEditing ? (
         <Input
+          ref={inputRef}
+          onClick={enableInput}
+          onBlur={disableInput}
+          onChange={onChange}
+          onKeyDown={onKeyDown}
+          value={title}
           className="h-7 px-2 focus-visible:ring-transparent"
         />
       ): (
