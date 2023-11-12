@@ -299,5 +299,11 @@ export const update = mutation({
     if (existingDocument.userId !== userId) {
       throw new Error("Unauthorized");
     }
+
+    const document = await ctx.db.patch(args.id, {
+      ...rest,
+    });
+    
+    return document;
   },
 });
