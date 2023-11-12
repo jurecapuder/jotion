@@ -68,7 +68,7 @@ export const Title = ({
         />
       ): (
         <Button
-          onClick={() => {}}
+          onClick={enableInput}
           variant="ghost"
           size="sm"
           className="font-normal h-auto p-1"
