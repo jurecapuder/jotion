@@ -28,7 +28,21 @@ export const Title = ({
       inputRef.current?.focus();
       inputRef.current?.setSelectionRange(0, inputRef.current.value.length);
     }, 0);
-  }
+  };
+
+  const disableInput = () => {
+    setIsEditing(false);
+  };
+
+  const onChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setTitle(event.target.value);
+    update({
+      id: initialData._id,
+      title: event.target.value || "Untitled"
+    });
+  };
 
   return (
     <div className="flex items-center gap-x-1">
