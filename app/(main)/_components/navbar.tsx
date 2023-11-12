@@ -34,7 +34,11 @@ export const Navbar = ({
     <>
       <nav className="bg-background dark:bg-[#1F1F1F] px-3 py-2 w-full flex items-center gap-x-4">
         {isCollapsed && (
-          <MenuIcon />
+          <MenuIcon
+            role="button"
+            onClick={onResetWidth}
+            className="h-6 w-6 text-muted-foreground"
+          />
         )}
       </nav>
     </>
