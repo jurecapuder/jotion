@@ -34,7 +34,7 @@ export const Title = ({
           size="sm"
           className="font-normal h-auto p-1"
         >
-          <span>
+          <span className="truncate">
             {initialData?.title}
           </span>
         </Button>
