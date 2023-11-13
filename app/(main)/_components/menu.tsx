@@ -33,8 +33,10 @@ export const Menu = ({
     toast.promise(promise, {
       loading: "Moving to trash...",
       success: "Note moved to trash!",
-      error: "Failed to move to trash."
+      error: "Failed to archive note."
     });
+
+    router.push("/documents");
   };
 
   return (
