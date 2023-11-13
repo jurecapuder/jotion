@@ -44,8 +44,8 @@ export const Menu = ({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button>
-          <MoreHorizontal />
+        <Button size="sm" variant="ghost">
+          <MoreHorizontal className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
     </DropdownMenu>
