@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/clerk-react";
 import { useMutation } from "convex/react";
 import { toast } from "sonner";
+import { MoreHorizontal } from "lucide-react";
 
 import { Id } from "@/convex/_generated/dataModel";
 import {
@@ -14,6 +15,7 @@ import {
   DropdownMenuSeparator
 } from "@/components/ui/dropdown-menu";
 import { api } from "@/convex/_generated/api";
+import { Button } from "@/components/ui/button";
 
 interface MenuProps {
   documentId: Id<"documents">;
@@ -40,8 +42,12 @@ export const Menu = ({
   };
 
   return (
-    <div>
-      Menu
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button>
+          <MoreHorizontal />
+        </Button>
+      </DropdownMenuTrigger>
+    </DropdownMenu>
   )
 }
