@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/clerk-react";
 import { useMutation } from "convex/react";
+import { toast } from "sonner";
 
 import { Id } from "@/convex/_generated/dataModel";
 import {
@@ -25,6 +26,16 @@ export const Menu = ({
   const { user } = useUser();
 
   const archive = useMutation(api.documents.archive);
+
+  const onArchive = () => {
+    const promise = archive({ id: documentId });
+
+    toast.promise(promise, {
+      loading: "Moving to trash...",
+      success: "Note moved to trash!",
+      error: "Failed to move to trash."
+    });
+  };
 
   return (
     <div>
