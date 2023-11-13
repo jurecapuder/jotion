@@ -1,6 +1,14 @@
 "use client";
 
-export const Menu = () => {
+import { Id } from "@/convex/_generated/dataModel";
+
+interface MenuProps {
+  documentId: Id<"documents">;
+};
+
+export const Menu = ({
+  documentId
+}: MenuProps) => {
   return (
     <div>
       Menu
