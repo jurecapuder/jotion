@@ -8,3 +8,24 @@ import {
   PopoverContent,
   PopoverTrigger
 } from "@/components/ui/popover";
+import React from "react";
+
+interface IconPickerProps {
+  onChange: (icon: string) => void;
+  children: React.ReactNode;
+  asChild?: boolean;
+};
+
+export const IconPicker = ({
+  onChange,
+  children,
+  asChild
+}: IconPickerProps) => {
+  const { resolvedTheme } = useTheme();
+  const currentTheme = (resolvedTheme || "light") as keyof typeof themeMap;
+
+  const themeMap = {
+    "dark": Theme.DARK,
+    "light": Theme.LIGHT
+  }
+};
