@@ -18,6 +18,22 @@ const DocumentIdPage = ({
     documentId: params.documentId
   });
 
+  if (document === undefined) {
+    return (
+      <div>
+        Loading...
+      </div>
+    );
+  }
+
+  if (document === null) {
+    return (
+      <div>
+        Not found
+      </div>
+    );
+  }
+
   return (
     <div>
       DocumentIdPage
