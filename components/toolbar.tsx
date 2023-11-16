@@ -35,6 +35,12 @@ export const Toolbar = ({
           </Button>
         </div>
       )}
+
+      {!!initialData.icon && preview && (
+        <p className="text-6xl pt-6">
+          {initialData.icon}
+        </p>
+      )}
     </div>
   )
 }
