@@ -1,11 +1,11 @@
 "use client";
 
+import { Smile, X } from "lucide-react";
+
 import { Doc } from "@/convex/_generated/dataModel";
+import { Button } from "./ui/button";
 
 import { IconPicker } from "./icon-picker";
-import { Button } from "./ui/button";
-import { X } from "lucide-react";
-
 interface ToolbarProps {
   initialData: Doc<"documents">;
   preview?: boolean;
@@ -41,6 +41,16 @@ export const Toolbar = ({
           {initialData.icon}
         </p>
       )}
+
+      <div className="opacity-0 group-hover:opacity-100 flex items-center gap-x-1 py-4">
+        {!initialData.icon && !preview && (
+          <IconPicker>
+            <Button>
+              <Smile />
+            </Button>
+          </IconPicker>
+        )}
+      </div>
     </div>
   )
 }
