@@ -27,5 +27,15 @@ export const IconPicker = ({
   const themeMap = {
     "dark": Theme.DARK,
     "light": Theme.LIGHT
-  }
+  };
+
+  const theme = themeMap[currentTheme];
+
+  return (
+    <Popover>
+      <PopoverTrigger asChild={asChild}>
+        {children}
+      </PopoverTrigger>
+    </Popover>
+  )
 };
