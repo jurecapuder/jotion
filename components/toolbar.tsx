@@ -1,9 +1,12 @@
 "use client";
 
+import { ElementRef, useRef, useState } from "react";
 import { ImageIcon, Smile, X } from "lucide-react";
+import { useMutation } from "convex/react";
 
 import { Doc } from "@/convex/_generated/dataModel";
 import { Button } from "./ui/button";
+import { api } from "@/convex/_generated/api";
 
 import { IconPicker } from "./icon-picker";
 interface ToolbarProps {
@@ -15,6 +18,12 @@ export const Toolbar = ({
   initialData,
   preview
 } : ToolbarProps) => {
+  const inputRef = useRef<ElementRef<"textarea">>(null);
+  const [isEditing, setIsEditing] = useState(false);
+  const [value, setValue] = useState(initialData.title);
+
+  const update = useMutation(api.documents.update);
+
   return (
     <div className="pl-[54px] group relative">
       {!!initialData.icon && !preview && (
