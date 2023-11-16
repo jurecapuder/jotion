@@ -36,6 +36,14 @@ export const Toolbar = ({
 
   const disableInput = () => setIsEditing(false);
 
+  const onInput = (value: string) => {
+    setValue(value);
+    update({
+      id: initialData._id,
+      title: value || "Untitled"
+    });
+  };
+
   return (
     <div className="pl-[54px] group relative">
       {!!initialData.icon && !preview && (
