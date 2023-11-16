@@ -58,8 +58,15 @@ export const Toolbar = ({
         )}
 
         {!initialData && !preview && (
-          <Button>
+          <Button
+            onClick={() => {}}
+            className="text-muted-foreground text-xs"
+            variant="outline"
+            size="sm"
+          >
             <ImageIcon className="h-4 w-4 mr-2" />
+
+            Add cover
           </Button>
         )}
       </div>
