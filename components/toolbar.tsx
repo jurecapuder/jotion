@@ -24,6 +24,18 @@ export const Toolbar = ({
 
   const update = useMutation(api.documents.update);
 
+  const enableInput = () => {
+    if (preview) return;
+
+    setIsEditing(true);
+    setTimeout(() => {
+      setValue(initialData.title);
+      inputRef.current?.focus();
+    }, 0);
+  };
+
+  const disableInput = () => setIsEditing(false);
+
   return (
     <div className="pl-[54px] group relative">
       {!!initialData.icon && !preview && (
