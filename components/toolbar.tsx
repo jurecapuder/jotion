@@ -96,7 +96,7 @@ export const Toolbar = ({
           </IconPicker>
         )}
 
-        {!initialData && !preview && (
+        {!initialData.icon && !preview && (
           <Button
             onClick={() => {}}
             className="text-muted-foreground text-xs"
