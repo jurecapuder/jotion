@@ -1,6 +1,6 @@
 "use client";
 
-import { Smile, X } from "lucide-react";
+import { ImageIcon, Smile, X } from "lucide-react";
 
 import { Doc } from "@/convex/_generated/dataModel";
 import { Button } from "./ui/button";
@@ -55,6 +55,12 @@ export const Toolbar = ({
               Add icon
             </Button>
           </IconPicker>
+        )}
+
+        {!initialData && !preview && (
+          <Button>
+            <ImageIcon className="h-4 w-4 mr-2" />
+          </Button>
         )}
       </div>
     </div>
