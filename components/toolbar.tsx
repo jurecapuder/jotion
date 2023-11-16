@@ -44,6 +44,15 @@ export const Toolbar = ({
     });
   };
 
+  const onKeyDown = (
+    event: React.KeyboardEvent<HTMLTextAreaElement>
+  ) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      disableInput();
+    }
+  };
+
   return (
     <div className="pl-[54px] group relative">
       {!!initialData.icon && !preview && (
