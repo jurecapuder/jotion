@@ -24,6 +24,7 @@ export const Toolbar = ({
   const [value, setValue] = useState(initialData.title);
 
   const update = useMutation(api.documents.update);
+  const removeIcon = useMutation(api.documents.removeIcon);
 
   const enableInput = () => {
     if (preview) return;
@@ -58,6 +59,12 @@ export const Toolbar = ({
     update({
       id: initialData._id,
       icon
+    });
+  };
+
+  const onRemoveIcon = () => {
+    removeIcon({
+      id: initialData._id
     });
   };
 
