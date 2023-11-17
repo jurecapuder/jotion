@@ -324,5 +324,9 @@ export const removeIcon = mutation({
     if (!existingDocument) {
       throw new Error("Not found");
     }
+
+    if (existingDocument.userId !== userId) {
+      throw new Error("Unauthorized");
+    }
   }
 })
