@@ -18,7 +18,11 @@ export const CoverImageModal = () => {
             Cover Image
           </h2>
         </DialogHeader>
+
+        <div>
+          TODO: Upload image
+        </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 };
