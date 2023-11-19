@@ -58,9 +58,12 @@ export const CoverImageModal = () => {
           </h2>
         </DialogHeader>
 
-        <div>
-          TODO: Upload image
-        </div>
+        <SingleImageDropzone
+          className="w-full outline-none"
+          disabled={isSubmitting}
+          value={file}
+          onChange={onChange}
+        />
       </DialogContent>
     </Dialog>
   );
