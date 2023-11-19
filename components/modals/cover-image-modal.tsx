@@ -24,6 +24,13 @@ export const CoverImageModal = () => {
   const [file, setFile] = useState<File>();
   const [ isSubmitting, setIsSubmitting ] = useState(false);
 
+  const onClose = () => {
+    setFile(undefined);
+    setIsSubmitting(false);
+    coverImage.onClose();
+  }
+
+
   const onChange = async (file?: File) => {
     if (file) {
       setIsSubmitting(true);
@@ -37,6 +44,8 @@ export const CoverImageModal = () => {
         id: params.documentId as Id<"documents">,
         coverImage: res.url
       });
+
+      onClose();
     }
   };
 
