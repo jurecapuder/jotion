@@ -42,7 +42,32 @@ export const Publish = ({
       success: "Published!",
       error: "Failed to publish note.",
     });
-  }
+  };
+
+  const onUnpublish = () => {
+    setIsSubmitting(true);
+
+    const promise = update({
+      id: initialData._id,
+      isPublished: false,
+    })
+      .finally(() => setIsSubmitting(false));
+
+    toast.promise(promise, {
+      loading: "Unpublishing...",
+      success: "Unpublished!",
+      error: "Failed to unpublish note.",
+    });
+  };
+
+  const onCopy = () => {
+    navigator.clipboard.writeText(url);
+    setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 1000);
+  };
 
   return (
     <div>
