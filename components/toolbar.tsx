@@ -7,7 +7,7 @@ import TextareaAutosize from "react-textarea-autosize";
 
 import { useCoverImage } from "@/hooks/use-cover-image";
 import { Doc } from "@/convex/_generated/dataModel";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { api } from "@/convex/_generated/api";
 
 import { IconPicker } from "./icon-picker";
@@ -19,7 +19,7 @@ interface ToolbarProps {
 export const Toolbar = ({
   initialData,
   preview
-} : ToolbarProps) => {
+}: ToolbarProps) => {
   const inputRef = useRef<ElementRef<"textarea">>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [value, setValue] = useState(initialData.title);
@@ -134,12 +134,12 @@ export const Toolbar = ({
           onKeyDown={onKeyDown}
           value={value}
           onChange={(e) => onInput(e.target.value)}
-          className="text-5xl bg-transparent font-bold break-words outline-none text-[#3f3f3f] dark:text-[#cfcfcf] resize-none"
+          className="text-5xl bg-transparent font-bold break-words outline-none text-[#3F3F3F] dark:text-[#CFCFCF] resize-none"
         />
-      ): (
+      ) : (
         <div
           onClick={enableInput}
-          className="pb-[11.5px] text-5xl font-bold break-words outline-none text-[#3f3f3f] dark:text-[#cfcfcf]"
+          className="pb-[11.5px] text-5xl font-bold break-words outline-none text-[#3F3F3F] dark:text-[#CFCFCF]"
         >
           {initialData.title}
         </div>
