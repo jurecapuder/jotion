@@ -22,14 +22,13 @@ export const CoverImageModal = () => {
   const { edgestore } = useEdgeStore();
 
   const [file, setFile] = useState<File>();
-  const [ isSubmitting, setIsSubmitting ] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const onClose = () => {
     setFile(undefined);
     setIsSubmitting(false);
     coverImage.onClose();
   }
-
 
   const onChange = async (file?: File) => {
     if (file) {
