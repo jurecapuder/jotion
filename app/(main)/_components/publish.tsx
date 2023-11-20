@@ -120,6 +120,15 @@ export const Publish = ({
                 )}
               </Button>
             </div>
+
+            <Button
+              size="sm"
+              className="w-full text-xs"
+              disabled={isSubmitting}
+              onClick={onUnpublish}
+            >
+              Unpublish
+            </Button>
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center">
