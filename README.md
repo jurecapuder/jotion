@@ -2,6 +2,8 @@
 
 This repository contains the code for Jotion, a fullstack Notion clone built with Next.js 13, React, Convex, and Tailwind. The project includes a variety of features to enhance your note-taking and collaboration experience.
 
+![jotion](https://github.com/jurecapuder/jotion/assets/127134124/186b00cc-38bd-45ba-87dd-2825e5790489)
+
 ## Key Features
 
 - **Real-time Database:** Keep your data synchronized across users in real-time.
