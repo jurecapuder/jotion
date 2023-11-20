@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useMutation } from "convex/react";
 import { toast } from "sonner";
-import { Globe } from "lucide-react";
+import { Check, CopyIcon, Globe } from "lucide-react";
 
 import { Doc } from "@/convex/_generated/dataModel";
 import {
@@ -92,8 +92,34 @@ export const Publish = ({
         forceMount
       >
         {initialData.isPublished ? (
-          <div>
-            Published
+          <div className="space-y-4">
+            <div className="flex items-center gap-x-2">
+              <Globe className="text-sky-500 animate-pulse h-4 w-4" />
+
+              <p className="text-xs font-medium text-sky-500">
+                This note is live on web.
+              </p>
+            </div>
+
+            <div className="flex items-center">
+              <input
+                className="flex-1 px-2 text-xs border rounded-l-md h-8 bg-muted truncate"
+                value={url}
+                disabled
+              />
+
+              <Button
+                onClick={onCopy}
+                disabled={copied}
+                className="h-8 rounded-l-none"
+              >
+                {copied ? (
+                  <Check className="h-4 w-4" />
+                ) : (
+                  <CopyIcon className="h-4 w-4" />
+                )}
+              </Button>
+            </div>
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center">
