@@ -5,6 +5,7 @@ import { ImageIcon, X } from "lucide-react";
 import { useMutation } from "convex/react";
 import { useParams } from "next/navigation";
 
+import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useCoverImage } from "@/hooks/use-cover-image";
@@ -81,3 +82,11 @@ export const Cover = ({
     </div>
   )
 };
+
+Cover.Skeleton = function CoverSkeleton() {
+  return (
+    <Skeleton
+      className="w-full h-[12vh]"
+    />
+  )
+}
